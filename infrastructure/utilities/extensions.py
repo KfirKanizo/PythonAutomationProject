@@ -16,11 +16,12 @@ wait = WebDriverWait(driver, 5)
 
 
 def get_element(xpath):
-    element = driver.find_element(By.XPATH, xpath)
+    element = WebDriverWait(driver, 5).until(ec.presence_of_element_located((By.XPATH, xpath)))
     return element
 
 
 def take_page_screenshot():
+    driver.implicitly_wait(3)
     driver.save_screenshot(page_img_name)
 
 
