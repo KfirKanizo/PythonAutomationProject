@@ -1,5 +1,5 @@
 from infrastructure.utilities import base, extensions
-from infrastructure.page_objects import login_page, pim_page
+from infrastructure.page_objects import login_page
 
 
 def login(username, password):

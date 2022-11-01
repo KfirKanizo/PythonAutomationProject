@@ -10,7 +10,6 @@ from infrastructure.utilities.base import driver
 
 now = str(datetime.datetime.now()).replace(':', '-')[:-7]
 page_img_name = config.img_repository_path + "page-image " + now + " .png"
-element_img_name = config.img_repository_path + "element-image " + now + " .png"
 action = ActionChains(driver)
 wait = WebDriverWait(driver, 5)
 
@@ -25,9 +24,9 @@ def take_page_screenshot():
     driver.save_screenshot(page_img_name)
 
 
-def take_element_screenshot(xpath):
+def take_element_screenshot(xpath, filename):
     element = get_element(xpath)
-    element.screenshot(element_img_name)
+    element.screenshot(filename)
 
 
 def get_text(xpath):
@@ -43,6 +42,16 @@ def click(xpath):
 def send_text(xpath, text_to_send):
     element = get_element(xpath)
     element.send_keys(text_to_send)
+
+
+def clear_field(xpath):
+    element = get_element(xpath)
+    element.clear()
+
+
+def upload_img(xpath, img_path):
+    driver.implicitly_wait(3)
+    driver.find_element(By.XPATH, xpath).send_keys(img_path)
 
 
 def select_drop_down_by_text(xpath, text_to_select):

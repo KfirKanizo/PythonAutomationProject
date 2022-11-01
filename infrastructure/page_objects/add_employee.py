@@ -1,6 +1,0 @@
-txt_firstName = "//input[@name='firstName']"
-txt_middleName = "//input[@name='middleName']"
-txt_lastName = "//input[@name='lastName']"
-txt_employee_id = "//div[contains(@class,'oxd-grid-2 orangehrm-full-width-grid')]//input[contains(@class,'oxd-input--active')]"
-btn_switch = "//span[contains(@class,'oxd-switch-input oxd-switch-input--active --label-right')]"
-btn_save = "//button[@type='submit']"
